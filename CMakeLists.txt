@@ -16,7 +16,7 @@ if(PACKAGING)
 endif()
 
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-conan_basic_setup()
+conan_basic_setup(TARGETS)
 
 #c++20 removed std::result_of but boost 1.75 is still using it.
 add_definitions(-DBOOST_ASIO_HAS_STD_INVOKE_RESULT=1)
