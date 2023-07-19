@@ -30,4 +30,6 @@ endif()
 message(STATUS "Build version: ${VERSION}")
 set(clio_version "${VERSION}")
 
+# REVIEW: Bad practice to generate files in the source tree.
+# Best practice: Generate into `CMAKE_BINARY_DIR` and call `target_sources()`.
 configure_file(CMake/Build.cpp.in ${CMAKE_SOURCE_DIR}/src/main/impl/Build.cpp)
