@@ -26,9 +26,6 @@
 #include <log/Logger.h>
 #include <subscriptions/SubscriptionManager.h>
 
-#include "org/xrpl/rpc/v1/xrp_ledger.grpc.pb.h"
-#include <grpcpp/grpcpp.h>
-
 #include <boost/algorithm/string.hpp>
 #include <boost/asio.hpp>
 #include <boost/beast/core.hpp>
@@ -37,6 +34,8 @@
 #include <boost/beast/websocket.hpp>
 #include <boost/uuid/uuid.hpp>
 #include <boost/uuid/uuid_generators.hpp>
+#include <grpcpp/grpcpp.h>
+#include <ripple/proto/org/xrpl/rpc/v1/xrp_ledger.grpc.pb.h>
 
 class LoadBalancer;
 class Source;

@@ -26,8 +26,8 @@
 #include <subscriptions/SubscriptionManager.h>
 
 #include <boost/asio.hpp>
-#include "org/xrpl/rpc/v1/xrp_ledger.grpc.pb.h"
 #include <grpcpp/grpcpp.h>
+#include <ripple/proto/org/xrpl/rpc/v1/xrp_ledger.grpc.pb.h>
 
 class Source;
 class ProbingSource;

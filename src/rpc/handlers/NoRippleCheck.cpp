@@ -34,7 +34,7 @@ NoRippleCheckHandler::process(NoRippleCheckHandler::Input input, Context const& 
     if (auto status = std::get_if<Status>(&lgrInfoOrStatus))
         return Error{*status};
 
-    auto const lgrInfo = std::get<ripple::LedgerInfo>(lgrInfoOrStatus);
+    auto const lgrInfo = std::get<ripple::LedgerHeader>(lgrInfoOrStatus);
     auto const accountID = accountFromStringStrict(input.account);
     auto const keylet = ripple::keylet::account(*accountID).key;
     auto const accountObj = sharedPtrBackend_->fetchLedgerObject(keylet, lgrInfo.seq, ctx.yield);

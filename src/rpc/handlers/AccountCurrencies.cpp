@@ -30,7 +30,7 @@ AccountCurrenciesHandler::process(AccountCurrenciesHandler::Input input, Context
     if (auto const status = std::get_if<Status>(&lgrInfoOrStatus))
         return Error{*status};
 
-    auto const lgrInfo = std::get<ripple::LedgerInfo>(lgrInfoOrStatus);
+    auto const lgrInfo = std::get<ripple::LedgerHeader>(lgrInfoOrStatus);
     auto const accountID = accountFromStringStrict(input.account);
 
     auto const accountLedgerObject =
